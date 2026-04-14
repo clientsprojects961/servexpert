@@ -16,9 +16,10 @@ const budgets = ['< $500/mo', '$500 – $1,500/mo', '$1,500 – $5,000/mo', '$5,
 const timeSlots = ['9:00 AM', '10:30 AM', '12:00 PM', '2:00 PM', '3:30 PM', '5:00 PM']
 const days = ['Mon, Apr 14', 'Tue, Apr 15', 'Wed, Apr 16', 'Thu, Apr 17', 'Fri, Apr 18']
 
-const EMAILJS_SERVICE = 'service_6fib62j'
-const EMAILJS_TEMPLATE = 'template_bdec71t'
-const EMAILJS_KEY = '0Sjwm8yXS2tEBWDFA'
+// Prefer env vars in production; keep fallback so local builds still work.
+const EMAILJS_SERVICE = import.meta?.env?.VITE_EMAILJS_SERVICE_ID || 'service_w7mfpbl'
+const EMAILJS_TEMPLATE = import.meta?.env?.VITE_EMAILJS_TEMPLATE_ID || 'template_bdec71t'
+const EMAILJS_KEY = import.meta?.env?.VITE_EMAILJS_PUBLIC_KEY || '0Sjwm8yXS2tEBWDFA'
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -51,10 +52,19 @@ export default function Contact() {
 
     setSubmitting(true)
     try {
+      if (!EMAILJS_SERVICE || !EMAILJS_TEMPLATE || !EMAILJS_KEY) {
+        throw new Error('EmailJS is not configured (missing service/template/public key).')
+      }
+
       await emailjs.send(
         EMAILJS_SERVICE,
         EMAILJS_TEMPLATE,
         {
+          // Common EmailJS template variables (recommended to include even if you also use custom names)
+          from_name: form.name,
+          from_email: form.email,
+          reply_to: form.email,
+
           name: form.name,
           phone: form.phone,
           email: form.email,
@@ -68,8 +78,14 @@ export default function Contact() {
         { publicKey: EMAILJS_KEY }
       )
       setSubmitted(true)
-    } catch {
-      setSubmitError('Something went wrong. Please try again in a moment.')
+    } catch (err) {
+      // EmailJS throws an object with helpful fields; expose them for debugging.
+      const message =
+        err?.text ||
+        err?.message ||
+        (typeof err === 'string' ? err : '') ||
+        'EmailJS request failed.'
+      setSubmitError(message)
     } finally {
       setSubmitting(false)
     }
