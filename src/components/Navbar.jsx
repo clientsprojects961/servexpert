@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Services', to: '/services' },
+  { label: 'Projects', to: '/projects' },
   { label: 'Work', to: '/work' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

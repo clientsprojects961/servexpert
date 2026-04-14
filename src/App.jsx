@@ -7,7 +7,8 @@ import AppLoader from './components/AppLoader'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
 import PageTransition from './components/PageTransition'
 import Home from './pages/Home'
-import Services from './pages/Services'
+import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import Work from './pages/Work'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -32,7 +33,8 @@ function AppInner() {
       <PageTransition>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

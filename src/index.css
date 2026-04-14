@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +12,16 @@
   --dark: #0D1210;
   --text: #111814;
   --sage: #4A6B5A;
+
+  /* Portfolio Section Tokens */
+  --pf-bg:           var(--dark);
+  --pf-bg-card:      #131B18;
+  --pf-text:         var(--cream);
+  --pf-muted:        var(--sage);
+  --pf-border:       rgba(2, 70, 46, 0.4);
+  --pf-accent:       var(--gold);
+  --pf-ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --pf-ease-inout:   cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 /* =================== RESET ===================  */
