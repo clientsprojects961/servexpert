@@ -15,9 +15,9 @@ export default function Projects() {
       <GrainOverlay />
       <CustomCursor />
       
-      <main className="min-h-screen pt-40 pb-16 px-6 md:px-16 lg:px-24 bg-[var(--pf-bg)] text-[var(--pf-text)]">
+      <main className="min-h-screen overflow-x-hidden pt-40 pb-16 px-6 md:px-16 lg:px-24 bg-[var(--pf-bg)] text-[var(--pf-text)]">
         {/* HERO SECTION */}
-        <div className="mb-24 relative">
+        <div className="mb-24 relative overflow-x-hidden">
           <div className="text-xs uppercase tracking-[0.1em] text-[var(--pf-muted)] mb-6 font-mono">
             SELECTED WORKS
           </div>
@@ -33,7 +33,7 @@ export default function Projects() {
             >
               PROJECTS
             </h1>
-            <span className="absolute top-2 -right-8 md:-right-12 text-sm md:text-base text-[var(--pf-muted)] font-mono">
+            <span className="absolute top-2 right-0 text-sm md:-right-12 md:text-base text-[var(--pf-muted)] font-mono">
               {projects.length < 10 ? `0${projects.length}` : projects.length}
             </span>
           </motion.div>

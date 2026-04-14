@@ -288,11 +288,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Social — desktop left rail; mobile compact row */}
-      <div className="pointer-events-none absolute bottom-[6.5rem] left-0 z-20 px-3 sm:bottom-[5.75rem] sm:px-4 md:bottom-12 md:left-2 md:px-8 lg:bottom-14 lg:px-10">
-        <div className="pointer-events-auto flex flex-col gap-2 sm:gap-2.5">
-          <p className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-brand-cream/55 sm:block">Follow</p>
-          <ul className="flex flex-row flex-wrap gap-2 sm:flex-col sm:gap-2">
+      {/* Social — mobile: centered row; desktop: left rail */}
+      <div className="pointer-events-none absolute bottom-[7.25rem] left-1/2 z-20 w-full -translate-x-1/2 px-4 sm:bottom-[5.75rem] sm:left-0 sm:w-auto sm:translate-x-0 sm:px-4 md:bottom-12 md:left-2 md:px-8 lg:bottom-14 lg:px-10">
+        <div className="pointer-events-auto flex flex-col items-center gap-2 sm:items-start sm:gap-2.5">
+          <p className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-brand-cream/55 sm:block">
+            Follow
+          </p>
+          <ul className="mx-auto flex max-w-[22rem] flex-row flex-wrap justify-center gap-2 sm:mx-0 sm:max-w-none sm:flex-col sm:justify-start sm:gap-2">
             {heroSocial.map((s) => (
               <li key={s.id}>
                 <a
@@ -300,10 +302,10 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={s.label}
-                  className="group flex items-center gap-2 rounded-full border border-white/15 bg-brand-dark/35 py-1.5 pl-1.5 pr-2.5 backdrop-blur-md transition-colors hover:border-brand-gold/40 hover:bg-brand-dark/50 sm:pl-2 sm:pr-3"
+                  className="group flex items-center gap-2 rounded-full border border-white/15 bg-brand-dark/40 py-1.5 pl-1.5 pr-2.5 backdrop-blur-md transition-colors hover:border-brand-gold/40 hover:bg-brand-dark/55 sm:pl-2 sm:pr-3"
                   aria-label={s.ariaLabel}
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-cream/10 text-brand-cream transition-colors group-hover:bg-brand-gold/20 group-hover:text-brand-gold sm:h-9 sm:w-9">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cream/10 text-brand-cream transition-colors group-hover:bg-brand-gold/20 group-hover:text-brand-gold sm:h-9 sm:w-9">
                     <SocialIcon id={s.id} className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
                   </span>
                   <span className="hidden max-w-[160px] truncate font-mono text-[11px] font-medium tracking-wide text-brand-cream/90 md:inline md:max-w-[180px] md:text-xs">
