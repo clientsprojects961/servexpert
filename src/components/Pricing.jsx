@@ -10,7 +10,7 @@ const plans = [
   {
     tier: 'Essential',
     name: 'Starter',
-    price: 'Starting at $X',
+    price: 'Starting at Rs 6,999',
     period: '/mo',
     desc: 'Perfect for startups establishing a digital presence.',
     features: [
@@ -26,7 +26,7 @@ const plans = [
   {
     tier: 'Performance',
     name: 'Growth',
-    price: 'Starting at $X',
+    price: 'Starting at Rs 13,999',
     period: '/mo',
     desc: 'For brands ready to scale across multiple channels.',
     features: [

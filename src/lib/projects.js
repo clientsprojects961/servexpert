@@ -35,8 +35,8 @@ export const projects = [
     type: 'website+ads',
     services: ['Meta Ads', 'Lead Generation', 'Audience Segmentation', 'Ad Creatives'],
     stats: {
-      revenue: '—',
-      roas: '—',
+      revenue: 'Rs 4 Lakh+',
+      roas: '3.5x',
       impressions: '850K+',
       ctr: '4.5%',
       conversions: '250+ Leads',
@@ -55,8 +55,8 @@ export const projects = [
     type: 'website+ads',
     services: ['Ad Campaigns', 'Audience Research', 'Retargeting Strategy', 'Conversion Optimization'],
     stats: {
-      revenue: '—',
-      roas: '—',
+      revenue: 'Rs 3 Lakh+',
+      roas: '2x',
       impressions: '1.2M+',
       ctr: '3.1%',
       conversions: '500+ Orders',
@@ -75,8 +75,8 @@ export const projects = [
     type: 'website+ads',
     services: ['Meta Ads', 'Lead Generation', 'Local Targeting', 'Enquiry Generation'],
     stats: {
-      revenue: '—',
-      roas: '—',
+      revenue: 'Rs 6-7 Lakh',
+      roas: '5.5x',
       impressions: '400K+',
       ctr: '2.9%',
       conversions: '150+ Inquiries',
